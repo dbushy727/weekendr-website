@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Weekendr\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
