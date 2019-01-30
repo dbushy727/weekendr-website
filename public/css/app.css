@@ -14191,7 +14191,7 @@ table.alt tbody tr td {
   -moz-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  background-image: url(/images/girl-canyon-dark.png?8454e680a3f51c952dd0d73e6672bc44), url(/images/pattern-size1.svg?a4cdaeb4e8d918e895d6b6ae71d960f8);
+  background-image: url(/images/girl-canyon-dark.png?8454e680a3f51c952dd0d73e6672bc44), url(/images/pattern-size1.svg?c8bb5062a8026d14ef3e21f1c299a1ba);
   background-position: top left, center center;
   background-attachment: fixed, fixed;
   background-size: cover;
@@ -14452,7 +14452,7 @@ table.alt tbody tr td {
 
 @media screen and (max-width: 1280px) {
   #header {
-    background-image: url(/images/girl-canyon-dark.png?8454e680a3f51c952dd0d73e6672bc44), url(/images/pattern-size2.svg?f9a1dc1fb043d3ed63a1fae221fc3324);
+    background-image: url(/images/girl-canyon-dark.png?8454e680a3f51c952dd0d73e6672bc44), url(/images/pattern-size2.svg?07126a1f5dad5bd758d4ebac1ed64246);
   }
 }
 
@@ -14494,7 +14494,7 @@ table.alt tbody tr td {
 
 @media screen and (max-width: 736px) {
   #header {
-    background-image: url(/images/girl-canyon-dark.png?8454e680a3f51c952dd0d73e6672bc44), url(/images/pattern-size3.svg?0a08dc0072df709a6060e05f76929803);
+    background-image: url(/images/girl-canyon-dark.png?8454e680a3f51c952dd0d73e6672bc44), url(/images/pattern-size3.svg?c349f851da5cb84998a39d011fb8a201);
   }
 
   #header h1 {
