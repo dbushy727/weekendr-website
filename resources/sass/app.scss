@@ -8,7 +8,27 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import 'fractal';
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+#header .content {
+    text-align:center;
+
+    p { color: #fff; }
+
+    a { color: #333; }
+
+    a.button { font-weight: lighter; }
+
+    .logo {
+        opacity: 0.5;
+        width: 25%;
+    }
+
+    .actions { justify-content: center; }
+
 }
