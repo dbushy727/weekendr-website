@@ -2,25 +2,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+@import 'theme';
 
-#header .content {
-    text-align:center;
+.logo { width: 3em; margin-right: 0.5em; }
 
-    p { color: #fff; }
+.main-logo {
 
-    a { color: #333; }
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 20px;
 
-    a.button { font-weight: lighter; }
-
-    .logo {
-        opacity: 0.5;
-        width: 25%;
-    }
-
-    .actions { justify-content: center; }
+    span { font-size: 2em; vertical-align: middle; }
 
 }
