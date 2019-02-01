@@ -8,8 +8,9 @@
 require('./bootstrap');
 
 import Vue from 'vue';
+import easing from 'jquery.easing';
 import Typewriter from 'vue-typewriter';
-
+Vue.use(Typewriter);
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,6 +21,7 @@ import Typewriter from 'vue-typewriter';
  */
 
 const files = require.context('./', true, /\.vue$/i)
+console.log(files.keys());
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 
@@ -29,7 +31,22 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.use(Typewriter);
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    mounted() {
+        const smoothScroll = (() => {
+            $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000, "easeInOutExpo");
+                        return false;
+                    }
+                }
+            });
+        })();
+    }
 });

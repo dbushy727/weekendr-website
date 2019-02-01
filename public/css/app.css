@@ -10588,7 +10588,7 @@ h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), url("/images/masthead.jpg");
+  background: radial-gradient(rgba(255, 255, 255, 0.5) 10%, rgba(0, 0, 0, 0.2)), url("/images/masthead.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10684,8 +10684,8 @@ h6 {
   width: 50px;
   height: 50px;
   text-align: center;
-  color: #fff;
-  background: rgba(52, 58, 64, 0.5);
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
   line-height: 50px;
   z-index: 999;
 }
@@ -10712,8 +10712,8 @@ h6 {
 
 .callout {
   padding: 15rem 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/images/bg-callout.jpg");
-  background-position: center center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/images/beach-hammock.jpeg");
+  background-position: center -60em;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -10735,9 +10735,9 @@ h6 {
 
 .portfolio-item .caption {
   display: flex;
-  height: 100%;
+  height: calc(100% + 1px);
   width: 100%;
-  background-color: rgba(33, 37, 41, 0.2);
+  background-color: rgba(33, 37, 41, 0.7);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -10750,7 +10750,6 @@ h6 {
 }
 
 .portfolio-item .caption .caption-content h2 {
-  font-size: 0.8rem;
   text-transform: uppercase;
 }
 
@@ -10790,7 +10789,7 @@ h6 {
   }
 
   .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
+    background-color: rgba(255, 193, 7, 0.9);
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }
@@ -10877,6 +10876,10 @@ a:active {
 .logo {
   width: 3em;
   margin-right: 0.5em;
+}
+
+.logo:hover {
+  width: 3.25em;
 }
 
 .main-logo {

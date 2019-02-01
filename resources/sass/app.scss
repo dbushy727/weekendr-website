@@ -4,7 +4,13 @@
 
 @import 'theme';
 
-.logo { width: 3em; margin-right: 0.5em; }
+.logo {
+
+    width: 3em;
+    margin-right: 0.5em;
+
+    &:hover { width:3.25em; }
+}
 
 .main-logo {
 

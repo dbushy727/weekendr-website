@@ -1,22 +1,22 @@
 <template>
     <div>
-        <a class="menu-toggle rounded" href="#" v-on:click="toggle" v-bind:class="{ active: isActive }">
-            <i class="fas fa-bars" v-bind:class="{ 'fa-bars': !isActive,  'fa-times': isActive }"></i>
+        <a class="menu-toggle rounded" href="#" v-on:click="toggle" :class="{ active: isActive }">
+            <i class="fas fa-bars" :class="{ 'fa-bars': !isActive,  'fa-times': isActive }"></i>
         </a>
 
-        <nav id="sidebar-wrapper" v-bind:class="{ active: isActive }">
+        <nav id="sidebar-wrapper" :class="{ active: isActive }">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a class="js-scroll-trigger" v-on:click="toggle" href="#page-top"><img src="/images/new-logo-big.png" class="logo">Weekendr</a>
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#page-top">Weekendr</a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" v-on:click="toggle" href="#page-top">Home</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" v-on:click="toggle" href="#about">About</a>
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#howitworks">How It Works</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" v-on:click="toggle" href="#services">Services</a>
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#callout">Sign Up</a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" v-on:click="toggle" href="#portfolio">Portfolio</a>
