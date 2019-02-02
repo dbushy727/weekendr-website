@@ -1,12 +1,11 @@
 <template>
-    <section class="content-section bg-light" id="howitworks">
+    <section class="content-section bg-light" id="how-it-works">
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-10 mx-auto content-section-heading">
                     <h2>How It Works</h2>
                     <p class="lead mb-5">
-                        This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-                        <a href="https://unsplash.com/">Unsplash</a>!
+                        Minus veritatis rem vero veniam neque eaque vitae, totam temporibus inventore nihil illo fuga aperiam.
                     </p>
                 </div>
             </div>
@@ -29,9 +28,9 @@
                       <!-- <div class="card-header text-muted">Step 2</div> -->
                       <div class="card-body">
                         <span class="badge badge-warning">2</span>
-                        <h5 class="card-title ">Searching & Filtering</h5>
+                        <h5 class="card-title ">Email Notifications</h5>
                         <hr>
-                        <p class="card-text">We are searching 24/7 for airline tickets to all destinations, so you don't have to. Once we find a deal under $200, we'll let you know about it via email.</p>
+                        <p class="card-text">We are searching 24/7 for airline tickets to all destinations, so you don't have to. Once we find a deal leaving on Friday and returning on Sunday for under $200, we'll let you know about it via email.</p>
                       </div>
 
                     </div>

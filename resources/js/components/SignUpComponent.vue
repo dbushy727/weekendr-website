@@ -1,5 +1,5 @@
 <template>
-    <section id="signup" class="callout">
+    <section id="sign-up" class="callout">
         <div class="container text-center">
             <h2 class="mx-auto mb-5">Join Weekendr Today!</h2>
 
@@ -66,8 +66,7 @@
                 $.ajax({url: `/api/places/${searchText}`, type: "GET"}).then(data => {
                     this.airports = JSON.parse(data).Places;
                 });
-            },
-
+            }
         },
         components: {
             ModelListSelect

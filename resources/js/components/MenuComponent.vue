@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a class="menu-toggle rounded" href="#" v-on:click="toggle" :class="{ active: isActive }">
+        <a class="menu-toggle rounded" v-on:click="toggle" :class="{ active: isActive }">
             <i class="fas fa-bars" :class="{ 'fa-bars': !isActive,  'fa-times': isActive }"></i>
         </a>
 
@@ -13,13 +13,19 @@
                     <a class="js-scroll-trigger" v-on:click="toggle" href="#page-top">Home</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" v-on:click="toggle" href="#howitworks">How It Works</a>
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#how-it-works">How It Works</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" v-on:click="toggle" href="#callout">Sign Up</a>
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#why-choose-weekendr">Why Choose Weekendr</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" v-on:click="toggle" href="#portfolio">Portfolio</a>
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#sign-up">Sign Up</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#travel-tips">Travel Tips</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" v-on:click="toggle" href="#past-deals">Past Deals</a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" v-on:click="toggle" href="#contact">Contact</a>
@@ -46,3 +52,7 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    a.menu-toggle { cursor: pointer; }
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <section class="content-section bg-warning text-text-dark text-center" id="services">
+    <section class="content-section bg-warning text-text-dark text-center" id="why-choose-weekendr">
         <div class="container">
             <div class="content-section-heading">
                 <!-- <h3 class="text-light mb-0">Services</h3> -->
