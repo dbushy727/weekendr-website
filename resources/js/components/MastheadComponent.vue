@@ -12,8 +12,8 @@
         <h3 class="mb-5">
             <em>Friday to Sunday roundtrip tickets for under $200</em>
         </h3>
-        <a class="btn btn-warning btn-xl js-scroll-trigger" href="#signup">Sign Up</a>
-        <a class="btn btn-dark btn-xl js-scroll-trigger" href="#howitworks">Learn More <i class="icon-arrow-down"></i></a>
+        <a class="btn btn-warning btn-xl js-scroll-trigger" href="#sign-up">Sign Up</a>
+        <a class="btn btn-dark btn-xl js-scroll-trigger" href="#how-it-works">Learn More <i class="icon-arrow-down"></i></a>
       </div>
       <div class="overlay"></div>
     </header>

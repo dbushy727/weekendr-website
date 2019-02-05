@@ -1958,18 +1958,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2156,12 +2144,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       airports: [],
-      selectedAirport: {}
+      selectedAirport: {},
+      email: '',
+      errors: {
+        airport: false,
+        email: false,
+        general: false
+      }
     };
   },
   methods: {
@@ -2178,6 +2174,52 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (data) {
         _this.airports = JSON.parse(data).Places;
       });
+    },
+    signUp: function signUp() {
+      if (this.failedValidation()) {
+        return;
+      }
+
+      this.subscribe();
+    },
+    subscribe: function subscribe() {
+      var that = this;
+      return $.ajax({
+        url: '/api/subscribe',
+        type: 'POST',
+        data: {
+          email: this.email,
+          airport: this.selectedAirport.PlaceId
+        },
+        success: function success() {
+          window.location.href = "/thank-you";
+        },
+        error: function error(err) {
+          that.errors.general = true;
+        }
+      });
+    },
+    reset: function reset() {
+      this.errors.email = false;
+      this.errors.airport = false;
+      this.errors.general = false;
+    },
+    failedValidation: function failedValidation() {
+      this.reset();
+
+      if (!this.validEmail(this.email)) {
+        this.errors.email = true;
+      }
+
+      if (_.isEmpty(this.selectedAirport)) {
+        this.errors.airport = true;
+      }
+
+      return this.errors.email || this.errors.airport;
+    },
+    validEmail: function validEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
     }
   },
   components: {
@@ -2187,10 +2229,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WhyChooseComponent.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/WhyChooseComponent.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TravelTipsComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TravelTipsComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2225,17 +2267,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['limit'],
+  data: function data() {
+    console.log('setting data');
+    return {
+      tips: []
+    };
+  },
+  methods: {
+    getTravelTips: function getTravelTips() {
+      var _this = this;
+
+      $.ajax({
+        url: '/api/travel-tips',
+        type: 'GET',
+        success: function success(travelTips) {
+          _this.tips = _this.limit ? _.take(travelTips, _this.limit) : travelTips;
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getTravelTips();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WhyChooseComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/WhyChooseComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -6605,7 +6673,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#mce-EMAIL[data-v-5011608a] {\n  padding: 20.5px;\n}\n.callout h2[data-v-5011608a] {\n  max-width: 40rem;\n}", ""]);
+exports.push([module.i, "#mce-EMAIL[data-v-5011608a] {\n  padding: 20.5px;\n}\n#mce-EMAIL[data-v-5011608a]::-webkit-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]:-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::placeholder {\n  color: #c7c7c7;\n}\n.callout h2[data-v-5011608a] {\n  max-width: 40rem;\n}", ""]);
 
 // exports
 
@@ -38428,7 +38496,7 @@ var render = function() {
         "a",
         {
           staticClass: "btn btn-warning btn-xl js-scroll-trigger",
-          attrs: { href: "#signup" }
+          attrs: { href: "#sign-up" }
         },
         [_vm._v("Sign Up")]
       ),
@@ -38456,7 +38524,7 @@ var staticRenderFns = [
       "a",
       {
         staticClass: "btn btn-dark btn-xl js-scroll-trigger",
-        attrs: { href: "#howitworks" }
+        attrs: { href: "#how-it-works" }
       },
       [_vm._v("Learn More "), _c("i", { staticClass: "icon-arrow-down" })]
     )
@@ -38521,7 +38589,7 @@ var render = function() {
               "a",
               {
                 staticClass: "js-scroll-trigger",
-                attrs: { href: "#page-top" },
+                attrs: { href: "/" },
                 on: { click: _vm.toggle }
               },
               [_vm._v("Home")]
@@ -38533,43 +38601,7 @@ var render = function() {
               "a",
               {
                 staticClass: "js-scroll-trigger",
-                attrs: { href: "#how-it-works" },
-                on: { click: _vm.toggle }
-              },
-              [_vm._v("How It Works")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "sidebar-nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "js-scroll-trigger",
-                attrs: { href: "#why-choose-weekendr" },
-                on: { click: _vm.toggle }
-              },
-              [_vm._v("Why Choose Weekendr")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "sidebar-nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "js-scroll-trigger",
-                attrs: { href: "#sign-up" },
-                on: { click: _vm.toggle }
-              },
-              [_vm._v("Sign Up")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "sidebar-nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "js-scroll-trigger",
-                attrs: { href: "#travel-tips" },
+                attrs: { href: "/travel-tips" },
                 on: { click: _vm.toggle }
               },
               [_vm._v("Travel Tips")]
@@ -38581,22 +38613,10 @@ var render = function() {
               "a",
               {
                 staticClass: "js-scroll-trigger",
-                attrs: { href: "#past-deals" },
+                attrs: { href: "/travel-tips" },
                 on: { click: _vm.toggle }
               },
-              [_vm._v("Past Deals")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "sidebar-nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "js-scroll-trigger",
-                attrs: { href: "#contact" },
-                on: { click: _vm.toggle }
-              },
-              [_vm._v("Contact")]
+              [_vm._v("Live Feed")]
             )
           ])
         ])
@@ -38862,28 +38882,70 @@ var render = function() {
           {
             staticClass: "validate",
             attrs: {
-              action: "/subscribe.php",
+              action: "/api/subscribe",
               method: "post",
               id: "mc-embedded-subscribe-form",
               name: "mc-embedded-subscribe-form",
               target: "_blank",
               novalidate: ""
+            },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.signUp($event)
+              }
             }
           },
           [
             _c("div", { staticClass: "form-row justify-content-lg-center" }, [
-              _vm._m(0),
+              _c("div", { staticClass: "col-lg-4 form-group text-left" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.email,
+                      expression: "email"
+                    }
+                  ],
+                  staticClass: "required email form-control",
+                  attrs: {
+                    type: "email",
+                    value: "",
+                    name: "email",
+                    id: "mce-EMAIL",
+                    placeholder: "Email Address *"
+                  },
+                  domProps: { value: _vm.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.email = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.email
+                  ? _c("div", { staticClass: "text-danger" }, [
+                      _vm._v(
+                        "Please make sure to type in a valid email address"
+                      )
+                    ])
+                  : _vm._e()
+              ]),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-lg-4 form-group" },
+                { staticClass: "col-lg-4 form-group text-left" },
                 [
                   _c("model-list-select", {
                     attrs: {
                       list: _vm.airports,
                       "option-value": "PlaceId",
                       "option-text": "PlaceName",
-                      placeholder: "Airport Code or City"
+                      placeholder: "Airport Code or City *"
                     },
                     on: { searchchange: _vm.searchAirport },
                     model: {
@@ -38893,7 +38955,15 @@ var render = function() {
                       },
                       expression: "selectedAirport"
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.errors.airport
+                    ? _c("div", { staticClass: "text-danger" }, [
+                        _vm._v(
+                          "Please make sure to select an airport code or city"
+                        )
+                      ])
+                    : _vm._e()
                 ],
                 1
               )
@@ -38901,11 +38971,21 @@ var render = function() {
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _vm._m(3)
+            _vm.errors.general
+              ? _c("div", { staticClass: "form-row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col form-group text-dark bg-danger" },
+                    [
+                      _vm._v(
+                        "\n                        It appears something went wrong. Please refresh the page and try again. If you are having trouble signing up, please email us at danny@weekendr.io\n                    "
+                      )
+                    ]
+                  )
+                ])
+              : _vm._e()
           ]
         )
       ])
@@ -38913,23 +38993,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-4 form-group" }, [
-      _c("input", {
-        staticClass: "required email form-control",
-        attrs: {
-          type: "email",
-          value: "",
-          name: "EMAIL",
-          id: "mce-EMAIL",
-          placeholder: "Email Address"
-        }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -38942,51 +39005,11 @@ var staticRenderFns = [
             type: "submit",
             value: "Sign Up",
             name: "subscribe",
-            id: "mc-embedded-subscribe"
+            id: "subscribe"
           }
         })
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "clear", attrs: { id: "mce-responses" } }, [
-      _c("div", {
-        staticClass: "response",
-        staticStyle: { display: "none" },
-        attrs: { id: "mce-error-response" }
-      }),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "response",
-        staticStyle: { display: "none" },
-        attrs: { id: "mce-success-response" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticStyle: { position: "absolute", left: "-5000px" },
-        attrs: { "aria-hidden": "true" }
-      },
-      [
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "b_b8208b298e182f511941c318d_03c2cc3ef1",
-            tabindex: "-1",
-            value: ""
-          }
-        })
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -39010,121 +39033,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "section",
+    { staticClass: "content-section", attrs: { id: "travel-tips" } },
+    [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row no-gutters" },
+          _vm._l(_vm.tips, function(tip) {
+            return _c("div", { staticClass: "col-lg-6" }, [
+              _c(
+                "a",
+                { staticClass: "portfolio-item", attrs: { href: tip.link } },
+                [
+                  _c("span", { staticClass: "caption" }, [
+                    _c("span", { staticClass: "caption-content" }, [
+                      _c("h2", [_vm._v(_vm._s(tip.title))]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-0" }, [
+                        _vm._v(_vm._s(tip.description))
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: { src: tip.thumbnail }
+                  })
+                ]
+              )
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      { staticClass: "content-section", attrs: { id: "travel-tips" } },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "content-section-heading text-center" }, [
-            _c("h2", { staticClass: "mb-5" }, [_vm._v("Travel Tips")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row no-gutters" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("a", { staticClass: "portfolio-item", attrs: { href: "#" } }, [
-                _c("span", { staticClass: "caption" }, [
-                  _c("span", { staticClass: "caption-content" }, [
-                    _c("h2", [_vm._v("Nashville")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v(
-                        "A yellow pencil with envelopes on a clean, blue backdrop!"
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/images/nashville-small.png", alt: "" }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("a", { staticClass: "portfolio-item", attrs: { href: "#" } }, [
-                _c("span", { staticClass: "caption" }, [
-                  _c("span", { staticClass: "caption-content" }, [
-                    _c("h2", [_vm._v("Orlando")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v(
-                        "A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!"
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/images/orlando-small.png", alt: "" }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("a", { staticClass: "portfolio-item", attrs: { href: "#" } }, [
-                _c("span", { staticClass: "caption" }, [
-                  _c("span", { staticClass: "caption-content" }, [
-                    _c("h2", [_vm._v("San Francisco")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v(
-                        "Strawberries are such a tasty snack, especially with a little sugar on top!"
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/images/san-francisco-small.png", alt: "" }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("a", { staticClass: "portfolio-item", attrs: { href: "#" } }, [
-                _c("span", { staticClass: "caption" }, [
-                  _c("span", { staticClass: "caption-content" }, [
-                    _c("h2", [_vm._v("New Orleans")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v(
-                        "A yellow workspace with some scissors, pencils, and other objects."
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/images/new-orleans-small.png", alt: "" }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "text-center" }, [
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-warning btn-xl js-scroll-trigger",
-                attrs: { href: "/travel-tips" }
-              },
-              [_vm._v("See More Travel Tips")]
-            )
-          ])
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "content-section-heading text-center" }, [
+      _c("h2", { staticClass: "mb-5" }, [_vm._v("Travel Tips")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-warning btn-xl js-scroll-trigger",
+          attrs: { href: "/travel-tips" }
+        },
+        [_vm._v("See More Travel Tips")]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -55315,17 +55288,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TravelTipsComponent_vue_vue_type_template_id_5d71b7e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TravelTipsComponent.vue?vue&type=template&id=5d71b7e0&scoped=true& */ "./resources/js/components/TravelTipsComponent.vue?vue&type=template&id=5d71b7e0&scoped=true&");
-/* harmony import */ var _TravelTipsComponent_vue_vue_type_style_index_0_id_5d71b7e0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TravelTipsComponent.vue?vue&type=style&index=0&id=5d71b7e0&lang=scss&scoped=true& */ "./resources/js/components/TravelTipsComponent.vue?vue&type=style&index=0&id=5d71b7e0&lang=scss&scoped=true&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TravelTipsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TravelTipsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/TravelTipsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TravelTipsComponent_vue_vue_type_style_index_0_id_5d71b7e0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TravelTipsComponent.vue?vue&type=style&index=0&id=5d71b7e0&lang=scss&scoped=true& */ "./resources/js/components/TravelTipsComponent.vue?vue&type=style&index=0&id=5d71b7e0&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TravelTipsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _TravelTipsComponent_vue_vue_type_template_id_5d71b7e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _TravelTipsComponent_vue_vue_type_template_id_5d71b7e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -55339,6 +55314,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/TravelTipsComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/TravelTipsComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/TravelTipsComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TravelTipsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TravelTipsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TravelTipsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TravelTipsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -55463,8 +55452,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/bushkdan/sites/weekendr-website/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/bushkdan/sites/weekendr-website/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/DanielBushkanets/Coding/weekendr-website/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/DanielBushkanets/Coding/weekendr-website/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -5,22 +5,24 @@
 
             <!-- Begin Mailchimp Signup Form -->
             <div id="mc_embed_signup">
-                <form action="/subscribe.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <form action="/api/subscribe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate @submit.prevent="signUp">
                     <div class="form-row justify-content-lg-center">
 
-                        <div class="col-lg-4 form-group">
-                            <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Email Address">
+                        <div class="col-lg-4 form-group text-left">
+                            <input type="email" value="" name="email" v-model="email" class="required email form-control" id="mce-EMAIL" placeholder="Email Address *">
+                            <div class="text-danger" v-if="errors.email">Please make sure to type in a valid email address</div>
                         </div>
 
-                        <div class="col-lg-4 form-group">
+                        <div class="col-lg-4 form-group text-left">
                             <model-list-select
                                 :list="airports"
                                 v-model="selectedAirport"
                                 option-value="PlaceId"
                                 option-text="PlaceName"
-                                placeholder="Airport Code or City"
+                                placeholder="Airport Code or City *"
                                 @searchchange="searchAirport">
                             </model-list-select>
+                            <div class="text-danger" v-if="errors.airport">Please make sure to select an airport code or city</div>
                         </div>
                     </div>
 
@@ -28,16 +30,16 @@
 
                     <div class="form-row">
                         <div class="col form-group">
-                            <input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="btn btn-warning btn-xl">
+                            <input type="submit" value="Sign Up" name="subscribe" id="subscribe" class="btn btn-warning btn-xl">
                         </div>
                     </div>
 
+                    <div class="form-row" v-if="errors.general">
+                        <div class="col form-group text-dark bg-danger">
+                            It appears something went wrong. Please refresh the page and try again. If you are having trouble signing up, please email us at danny@weekendr.io
+                        </div>
+                    </div>
 
-                    <div id="mce-responses" class="clear">
-                        <div class="response" id="mce-error-response" style="display:none"></div>
-                        <div class="response" id="mce-success-response" style="display:none"></div>
-                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b8208b298e182f511941c318d_03c2cc3ef1" tabindex="-1" value=""></div>
                 </form>
             </div>
             <!--End mc_embed_signup-->
@@ -54,6 +56,12 @@
             return {
                 airports: [],
                 selectedAirport: {},
+                email: '',
+                errors: {
+                    airport: false,
+                    email: false,
+                    general: false,
+                }
             }
         },
         methods: {
@@ -66,6 +74,50 @@
                 $.ajax({url: `/api/places/${searchText}`, type: "GET"}).then(data => {
                     this.airports = JSON.parse(data).Places;
                 });
+            },
+            signUp () {
+                if (this.failedValidation()) {
+                    return;
+                }
+
+                this.subscribe();
+            },
+            subscribe() {
+                const that = this;
+                return $.ajax({
+                    url: '/api/subscribe',
+                    type: 'POST',
+                    data: {
+                        email: this.email,
+                        airport: this.selectedAirport.PlaceId
+                    }, success: function () {
+                        window.location.href = "/thank-you";
+                    }, error: function (err) {
+                        that.errors.general = true;
+                    }
+                });
+            },
+            reset() {
+                this.errors.email   = false;
+                this.errors.airport = false;
+                this.errors.general = false;
+            },
+            failedValidation() {
+                this.reset();
+
+                if (!this.validEmail(this.email)) {
+                    this.errors.email = true;
+                }
+
+                if (_.isEmpty(this.selectedAirport)) {
+                    this.errors.airport = true;
+                }
+
+                return this.errors.email || this.errors.airport;
+            },
+            validEmail (email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
             }
         },
         components: {
@@ -76,7 +128,13 @@
 
 <style lang="scss" scoped>
 
-    #mce-EMAIL { padding: 20.5px; }
+    #mce-EMAIL {
+
+        padding: 20.5px;
+
+        &::placeholder { color: #c7c7c7; }
+
+    }
 
     .callout h2 { max-width: 40rem; }
 </style>
