@@ -63,7 +63,7 @@
                             text_x = ticker_width + 300;
                         }
                     });
-                }, 10);
+                }, 7);
             },
             getFlightDeals() {
                 return $.ajax({url: '/api/flight-deals', type: 'GET', success: (data) => {

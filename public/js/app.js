@@ -2303,7 +2303,7 @@ __webpack_require__.r(__webpack_exports__);
             text_x = ticker_width + 300;
           }
         });
-      }, 10);
+      }, 7);
     },
     getFlightDeals: function getFlightDeals() {
       var _this = this;
