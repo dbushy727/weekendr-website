@@ -8,7 +8,8 @@
         <link rel='shortcut icon' type='image/x-icon' href='images/logo.png' />
         <title>Weekendr</title>
         <!-- Custom Icons -->
-        <link rel="stylesheet" href="/css/fontawesome-free/css/all.min.css">
+        {{-- <link rel="stylesheet" href="/css/fontawesome-free/css/all.min.css"> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="/css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="/css/app.css" rel="stylesheet">

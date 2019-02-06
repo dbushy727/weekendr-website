@@ -18,7 +18,7 @@
                         <span class="badge badge-warning">1</span>
                         <h5 class="card-title ">Sign Up</h5>
                         <hr>
-                        <p class="card-text">Let us know which airport or city you want to fly out of. Then give us your email address so we can reach you when we have deals for you.</p>
+                        <p class="card-text">To get started, we just need your email address and the airport code or city you fly out of.</p>
                       </div>
 
                     </div>
@@ -42,7 +42,7 @@
                         <span class="badge badge-warning">3</span>
                         <h5 class="card-title ">Book It</h5>
                         <hr>
-                        <p class="card-text">Every flight deal will have a "Book Flight" button which will take you to an external flight bookings site. From there you can book the flight, as well as see flight details like times, prices, etc.</p>
+                        <p class="card-text">Every flight deal will have a "Book Flight" button which will take you to an external flight bookings site. From there you can book the flight, as well as see flight details, times, prices, etc.</p>
 
                       </div>
 

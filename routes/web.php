@@ -79,6 +79,39 @@ Route::get('/api/travel-tips', function () {
     return config('travel-tips');
 });
 
+Route::get('/api/flight-deals', function () {
+    return [
+        [
+            'price'                 => 103,
+            'departure_origin'      => 'JFK',
+            'departure_destination' => 'ORD',
+            'departure_date'        => 'Feb 8, 2019',
+            'return_date'           => 'Feb 10, 2019',
+        ],
+        [
+            'price'                 => 148,
+            'departure_origin'      => 'LAX',
+            'departure_destination' => 'SFO',
+            'departure_date'        => 'Feb 15, 2019',
+            'return_date'           => 'Feb 17, 2019',
+        ],
+        [
+            'price'                 => 188,
+            'departure_origin'      => 'BOS',
+            'departure_destination' => 'ORL',
+            'departure_date'        => 'Feb 8, 2019',
+            'return_date'           => 'Feb 10, 2019',
+        ],
+        [
+            'price'                 => 122,
+            'departure_origin'      => 'DEN',
+            'departure_destination' => 'LAS',
+            'departure_date'        => 'Feb 15, 2019',
+            'return_date'           => 'Feb 17, 2019',
+        ],
+    ];
+});
+
 Route::get('/thank-you', function () {
     return view('thank-you');
 });
