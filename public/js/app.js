@@ -2439,6 +2439,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -6775,7 +6776,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".deals[data-v-35e85cda] {\n  margin-top: 3rem;\n}\n.card[data-v-35e85cda] {\n  margin-bottom: 3em;\n  border-width: 0;\n}\n.card .card-header[data-v-35e85cda] {\n  font-family: serif;\n}\n.card .card-body[data-v-35e85cda] {\n  min-height: 18em;\n}\n.card .card-body hr[data-v-35e85cda] {\n  margin: 2em auto;\n  width: 25%;\n}\n.card .card-body p.card-text[data-v-35e85cda] {\n  font-size: 1.1em;\n}\n.card .card-body span.badge[data-v-35e85cda] {\n  position: absolute;\n  top: -30px;\n  padding-top: 1.15em;\n  border-radius: 50%;\n  font-family: serif, monospace;\n  font-size: 1.2em;\n  right: -30px;\n  width: 60px;\n  height: 60px;\n}\n.card .card-body .card-title[data-v-35e85cda] {\n  margin-top: 6.5rem;\n}\n.card .deal--orlando[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/orlando-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--las-vegas[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/las-vegas-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--chicago[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/chicago-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--san-francisco[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/san-francisco-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--new-york[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/new-york-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--tampa[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/tampa-small.png\") center center;\n  background-size: cover;\n}", ""]);
+exports.push([module.i, ".deals[data-v-35e85cda] {\n  margin-top: 3rem;\n}\n.card[data-v-35e85cda] {\n  margin-bottom: 3em;\n  border-width: 0;\n}\n.card .card-header[data-v-35e85cda] {\n  font-family: serif;\n}\n.card .card-body[data-v-35e85cda] {\n  min-height: 18em;\n}\n.card .card-body hr[data-v-35e85cda] {\n  margin: 2em auto;\n  width: 25%;\n}\n.card .card-body p.card-text[data-v-35e85cda] {\n  font-size: 1.1em;\n}\n.card .card-body span.badge[data-v-35e85cda] {\n  position: absolute;\n  top: -30px;\n  padding-top: 1.15em;\n  border-radius: 50%;\n  font-family: serif, monospace;\n  font-size: 1.2em;\n  right: calc(50% - 30px);\n  width: 60px;\n  height: 60px;\n}\n.card .card-body .card-title[data-v-35e85cda] {\n  margin-top: 6.5rem;\n}\n.card .deal--orlando[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/orlando-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--las-vegas[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/las-vegas-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--chicago[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/chicago-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--san-francisco[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/san-francisco-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--new-york[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/new-york-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--tampa[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/tampa-small.png\") center center;\n  background-size: cover;\n}", ""]);
 
 // exports
 
@@ -6851,7 +6852,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".row[data-v-37106e69] {\n  margin: 5em 0;\n}\ni.fas[data-v-37106e69] {\n  font-size: 7em;\n  color: #333;\n}", ""]);
+exports.push([module.i, ".row[data-v-37106e69] {\n  margin: 3em 0;\n}\ni.fas[data-v-37106e69] {\n  font-size: 7em;\n  color: #333;\n  margin-bottom: 50px;\n}", ""]);
 
 // exports
 
@@ -39456,11 +39457,11 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "content-section-body text-left" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-2 text-center" }, [
+              _c("div", { staticClass: "col-lg-3 text-center" }, [
                 _c("i", { staticClass: "fas fa-chart-line" })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-lg-10" }, [
+              _c("div", { staticClass: "col-lg-9 why-copy" }, [
                 _c("h4", [_vm._v("Price Changes")]),
                 _vm._v(" "),
                 _c("p", [
@@ -39474,7 +39475,11 @@ var staticRenderFns = [
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-10" }, [
+              _c("div", { staticClass: "col-lg-3 text-center" }, [
+                _c("i", { staticClass: "fas fa-calendar-alt" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-9 why-copy" }, [
                 _c("h4", [_vm._v("No Vacation Days Required")]),
                 _vm._v(" "),
                 _c("p", [
@@ -39482,21 +39487,17 @@ var staticRenderFns = [
                     "Do you ever feel like you want to travel, but just don't have the vacation days? With Weekendr, you can leave on Friday and be back on Sunday just in time for work on Monday. Plus, all the flights are under $200 roundtrip, so you won't be breaking the bank trying to live your best life."
                   )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-2 text-center" }, [
-                _c("i", { staticClass: "fas fa-calendar-alt" })
               ])
             ]),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-2 text-center" }, [
+              _c("div", { staticClass: "col-lg-3 text-center" }, [
                 _c("i", { staticClass: "fas fa-hiking" })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-lg-10" }, [
+              _c("div", { staticClass: "col-lg-9 why-copy" }, [
                 _c("h4", [_vm._v("Weekend Warriors")]),
                 _vm._v(" "),
                 _c("p", [

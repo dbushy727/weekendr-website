@@ -125,7 +125,7 @@
                 border-radius: 50%;
                 font-family: serif, monospace;
                 font-size: 1.2em;
-                right: -30px;
+                right: calc(50% - 30px);
                 width: 60px;
                 height: 60px;
 
