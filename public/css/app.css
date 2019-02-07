@@ -10497,6 +10497,17 @@ a.text-dark:focus {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/blob/master/LICENSE)
  */
 
+@font-face {
+  font-family: "Weekendr";
+  src: url("/fonts/gill-sans-mt.otf");
+}
+
+@font-face {
+  font-family: "Weekendr";
+  font-weight: bold;
+  src: url("/fonts/gill-sans-mt-bold.otf");
+}
+
 body,
 html {
   width: 100%;
@@ -10504,7 +10515,7 @@ html {
 }
 
 body {
-  font-family: "Gill Sans MT";
+  font-family: "Weekendr";
 }
 
 .btn-xl {

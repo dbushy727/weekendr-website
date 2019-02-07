@@ -2290,7 +2290,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     startScroll: function startScroll(text_x, tickerDeals, ticker_width, total_width) {
       var that = this;
-      var speed = this.isMobileDevice() ? 20 : 7;
+      var speed = this.isMobileDevice() ? 3 : 7;
       console.log(speed);
       setInterval(function () {
         text_x--;
