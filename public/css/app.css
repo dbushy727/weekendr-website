@@ -10499,26 +10499,26 @@ a.text-dark:focus {
 
 @font-face {
   font-family: "Weekendr";
-  src: url("/fonts/gill-sans-mt.otf");
+  src: url("/fonts/weekendr.otf");
 }
 
 @font-face {
   font-family: "Weekendr";
   font-weight: bold;
-  src: url("/fonts/gill-sans-mt-bold.otf");
+  src: url("/fonts/weekendr-bold.otf");
 }
 
 @font-face {
   font-family: "Weekendr";
   font-style: italic;
-  src: url("/fonts/gill-sans-mt-italic.otf");
+  src: url("/fonts/weekendr-italic.otf");
 }
 
 @font-face {
   font-family: "Weekendr";
   font-style: italic;
   font-weight: bold;
-  src: url("/fonts/gill-sans-mt-bold-italic.otf");
+  src: url("/fonts/weekendr-bold-italic.otf");
 }
 
 body,
