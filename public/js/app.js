@@ -2290,6 +2290,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     startScroll: function startScroll(text_x, tickerDeals, ticker_width, total_width) {
       var that = this;
+      var speed = this.isMobileDevice() ? 20 : 7;
+      console.log(speed);
       setInterval(function () {
         text_x--;
 
@@ -2303,7 +2305,7 @@ __webpack_require__.r(__webpack_exports__);
             text_x = ticker_width + 300;
           }
         });
-      }, 7);
+      }, speed);
     },
     getFlightDeals: function getFlightDeals() {
       var _this = this;
@@ -2315,6 +2317,9 @@ __webpack_require__.r(__webpack_exports__);
           _this.flightDeals = data;
         }
       });
+    },
+    isMobileDevice: function isMobileDevice() {
+      return typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
     }
   }
 });

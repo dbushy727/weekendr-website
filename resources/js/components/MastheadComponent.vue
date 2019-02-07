@@ -23,7 +23,7 @@
     export default {
         mounted() {
             console.log('Component masthead mounted.');
-        }
+        },
     }
 </script>
 

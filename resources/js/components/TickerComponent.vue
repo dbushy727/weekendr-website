@@ -50,6 +50,8 @@
             },
             startScroll(text_x, tickerDeals, ticker_width, total_width) {
                 const that = this;
+                const speed = this.isMobileDevice() ? 20 : 7;
+                console.log(speed);
                 setInterval(function() {
                     text_x--;
 
@@ -63,12 +65,15 @@
                             text_x = ticker_width + 300;
                         }
                     });
-                }, 7);
+                }, speed);
             },
             getFlightDeals() {
                 return $.ajax({url: '/api/flight-deals', type: 'GET', success: (data) => {
                     this.flightDeals = data;
                 }});
+            },
+            isMobileDevice() {
+                return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
             }
         }
     }
