@@ -49,9 +49,8 @@
 
             },
             startScroll(text_x, tickerDeals, ticker_width, total_width) {
-                const that = this;
-                const speed = this.isMobileDevice() ? 3 : 7;
-                console.log(speed);
+                const that  = this;
+                const speed = 10;
                 setInterval(function() {
                     text_x--;
 
