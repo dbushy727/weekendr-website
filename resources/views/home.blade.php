@@ -9,7 +9,7 @@
 
     <why-choose-component></why-choose-component>
 
-    <travel-tips-component v-bind:limit="4"></travel-tips-component>
+    {{-- <travel-tips-component v-bind:limit="4"></travel-tips-component> --}}
 
     <past-deals-component></past-deals-component>
 

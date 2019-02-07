@@ -25,7 +25,7 @@
                 <span class="pull-right">Weekendr</span>
             </div>
 
-            <menu-component></menu-component>
+            {{-- <menu-component></menu-component> --}}
 
             @yield('content')
 
