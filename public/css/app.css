@@ -10508,6 +10508,19 @@ a.text-dark:focus {
   src: url("/fonts/gill-sans-mt-bold.otf");
 }
 
+@font-face {
+  font-family: "Weekendr";
+  font-style: italic;
+  src: url("/fonts/gill-sans-mt-italic.otf");
+}
+
+@font-face {
+  font-family: "Weekendr";
+  font-style: italic;
+  font-weight: bold;
+  src: url("/fonts/gill-sans-mt-bold-italic.otf");
+}
+
 body,
 html {
   width: 100%;
