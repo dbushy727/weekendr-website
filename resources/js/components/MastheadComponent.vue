@@ -31,10 +31,19 @@
 
     .icon-arrow-down { vertical-align: middle; margin-left: 0.3em; }
 
-    @media (max-width: 736px) {
+    @media (max-width: 1000px) {
 
         h1 { font-size: 2.15rem; }
         h3 { font-size: 1.25rem; }
+
+        .masthead {
+
+            background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url("/images/beach-stairs-small.jpeg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
     }
 
 </style>

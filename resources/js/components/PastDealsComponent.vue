@@ -144,7 +144,7 @@
             background-size: cover;
         }
         .deal--chicago {
-            background: radial-gradient(rgba(255, 255, 255, 0) -50%, rgba(0, 0, 0, 1)), url('/images/chicago-small.png') center center;
+            background: radial-gradient(rgba(255, 255, 255, 0) -50%, rgba(0, 0, 0, 1)), url('/images/chicago-xs.png') center center;
             background-size: cover;
         }
         .deal--san-francisco {

@@ -70,9 +70,6 @@
                 return $.ajax({url: '/api/flight-deals', type: 'GET', success: (data) => {
                     this.flightDeals = data;
                 }});
-            },
-            isMobileDevice() {
-                return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
             }
         }
     }
@@ -89,7 +86,8 @@
         width: 100%;
         z-index: 2;
         padding: 1em 0;
-        line-height: 0;
+        line-height: 0.5;
+        font-size: 1.2em;
         color: #333;
         opacity: 0.9;
 

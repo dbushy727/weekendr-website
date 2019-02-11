@@ -2316,9 +2316,6 @@ __webpack_require__.r(__webpack_exports__);
           _this.flightDeals = data;
         }
       });
-    },
-    isMobileDevice: function isMobileDevice() {
-      return typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
     }
   }
 });
@@ -6742,7 +6739,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".icon-arrow-down[data-v-1a46334d] {\n  vertical-align: middle;\n  margin-left: 0.3em;\n}\n@media (max-width: 736px) {\nh1[data-v-1a46334d] {\n    font-size: 2.15rem;\n}\nh3[data-v-1a46334d] {\n    font-size: 1.25rem;\n}\n}", ""]);
+exports.push([module.i, ".icon-arrow-down[data-v-1a46334d] {\n  vertical-align: middle;\n  margin-left: 0.3em;\n}\n@media (max-width: 1000px) {\nh1[data-v-1a46334d] {\n    font-size: 2.15rem;\n}\nh3[data-v-1a46334d] {\n    font-size: 1.25rem;\n}\n.masthead[data-v-1a46334d] {\n    background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url(\"/images/beach-stairs-small.jpeg\");\n    background-position: center center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n}", ""]);
 
 // exports
 
@@ -6780,7 +6777,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".deals[data-v-35e85cda] {\n  margin-top: 3rem;\n}\n.card[data-v-35e85cda] {\n  margin-bottom: 3em;\n  border-width: 0;\n}\n.card .card-header[data-v-35e85cda] {\n  font-family: serif;\n}\n.card .card-body[data-v-35e85cda] {\n  min-height: 18em;\n}\n.card .card-body hr[data-v-35e85cda] {\n  margin: 2em auto;\n  width: 25%;\n}\n.card .card-body p.card-text[data-v-35e85cda] {\n  font-size: 1.1em;\n}\n.card .card-body span.badge[data-v-35e85cda] {\n  position: absolute;\n  top: -30px;\n  padding-top: 1.15em;\n  border-radius: 50%;\n  font-family: serif, monospace;\n  font-size: 1.2em;\n  right: calc(50% - 30px);\n  width: 60px;\n  height: 60px;\n}\n.card .card-body .card-title[data-v-35e85cda] {\n  margin-top: 6.5rem;\n}\n.card .deal--orlando[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/orlando-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--las-vegas[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/las-vegas-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--chicago[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/chicago-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--san-francisco[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/san-francisco-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--new-york[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/new-york-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--tampa[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/tampa-small.png\") center center;\n  background-size: cover;\n}", ""]);
+exports.push([module.i, ".deals[data-v-35e85cda] {\n  margin-top: 3rem;\n}\n.card[data-v-35e85cda] {\n  margin-bottom: 3em;\n  border-width: 0;\n}\n.card .card-header[data-v-35e85cda] {\n  font-family: serif;\n}\n.card .card-body[data-v-35e85cda] {\n  min-height: 18em;\n}\n.card .card-body hr[data-v-35e85cda] {\n  margin: 2em auto;\n  width: 25%;\n}\n.card .card-body p.card-text[data-v-35e85cda] {\n  font-size: 1.1em;\n}\n.card .card-body span.badge[data-v-35e85cda] {\n  position: absolute;\n  top: -30px;\n  padding-top: 1.15em;\n  border-radius: 50%;\n  font-family: serif, monospace;\n  font-size: 1.2em;\n  right: calc(50% - 30px);\n  width: 60px;\n  height: 60px;\n}\n.card .card-body .card-title[data-v-35e85cda] {\n  margin-top: 6.5rem;\n}\n.card .deal--orlando[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/orlando-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--las-vegas[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/las-vegas-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--chicago[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/chicago-xs.png\") center center;\n  background-size: cover;\n}\n.card .deal--san-francisco[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/san-francisco-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--new-york[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/new-york-small.png\") center center;\n  background-size: cover;\n}\n.card .deal--tampa[data-v-35e85cda] {\n  background: radial-gradient(rgba(255, 255, 255, 0) -50%, black), url(\"/images/tampa-small.png\") center center;\n  background-size: cover;\n}", ""]);
 
 // exports
 
@@ -6799,7 +6796,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#mce-EMAIL[data-v-5011608a] {\n  padding: 20.5px;\n}\n#mce-EMAIL[data-v-5011608a]::-webkit-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]:-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::placeholder {\n  color: #c7c7c7;\n}\n.callout h2[data-v-5011608a] {\n  max-width: 40rem;\n}", ""]);
+exports.push([module.i, "#mce-EMAIL[data-v-5011608a] {\n  padding: 20.5px;\n}\n#mce-EMAIL[data-v-5011608a]::-webkit-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]:-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::placeholder {\n  color: #c7c7c7;\n}\n.callout h2[data-v-5011608a] {\n  max-width: 40rem;\n}\n@media (max-width: 992px) {\n.callout[data-v-5011608a] {\n    padding: 5rem 0;\n    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%), url(\"/images/beach-hammock-small.jpeg\");\n    background-position: center 0em;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.callout h2[data-v-5011608a] {\n    font-size: 3em;\n}\n}", ""]);
 
 // exports
 
@@ -6818,7 +6815,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#ticker-section[data-v-d05e3010] {\n  font-family: monospace;\n  position: fixed;\n  bottom: 0;\n  background: #ffc107;\n  width: 100%;\n  z-index: 2;\n  padding: 1em 0;\n  line-height: 0;\n  color: #333;\n  opacity: 0.9;\n}\n#ticker-section .ticker[data-v-d05e3010] {\n  white-space: nowrap;\n}\n#ticker-section .ticker .ticker-deal[data-v-d05e3010] {\n  position: relative;\n  top: 0;\n  white-space: nowrap;\n  width: auto;\n  display: inline-block;\n  margin-right: 10em;\n}\n#ticker-section .ticker .mini[data-v-d05e3010] {\n  margin: 0 -20em;\n}", ""]);
+exports.push([module.i, "#ticker-section[data-v-d05e3010] {\n  font-family: monospace;\n  position: fixed;\n  bottom: 0;\n  background: #ffc107;\n  width: 100%;\n  z-index: 2;\n  padding: 1em 0;\n  line-height: 0.5;\n  font-size: 1.2em;\n  color: #333;\n  opacity: 0.9;\n}\n#ticker-section .ticker[data-v-d05e3010] {\n  white-space: nowrap;\n}\n#ticker-section .ticker .ticker-deal[data-v-d05e3010] {\n  position: relative;\n  top: 0;\n  white-space: nowrap;\n  width: auto;\n  display: inline-block;\n  margin-right: 10em;\n}\n#ticker-section .ticker .mini[data-v-d05e3010] {\n  margin: 0 -20em;\n}", ""]);
 
 // exports
 

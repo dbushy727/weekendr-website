@@ -137,4 +137,20 @@
     }
 
     .callout h2 { max-width: 40rem; }
+
+    @media (max-width: 992px) {
+
+        .callout{
+
+            padding: 5rem 0;
+            background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3))), url("/images/beach-hammock-small.jpeg");
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%), url("/images/beach-hammock-small.jpeg");
+            background-position: center 0em;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            h2 { font-size: 3em; }
+        }
+
+    }
 </style>
