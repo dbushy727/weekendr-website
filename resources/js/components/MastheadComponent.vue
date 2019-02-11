@@ -48,7 +48,7 @@
 
         .masthead {
 
-            background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url("/images/beach-stairs-small.jpeg");
+            background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url("/images/masthead-small.jpg");
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
