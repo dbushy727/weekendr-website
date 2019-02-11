@@ -10,7 +10,7 @@
 
                         <div class="col-lg-4 form-group text-left">
                             <input type="email" value="" name="email" v-model="email" class="required email form-control" id="mce-EMAIL" placeholder="Email Address *">
-                            <div class="text-danger" v-if="errors.email">Please make sure to type in a valid email address</div>
+                            <div class="text-light bg-danger error" v-if="errors.email">Please make sure to type in a valid email address</div>
                         </div>
 
                         <div class="col-lg-4 form-group text-left">
@@ -22,7 +22,7 @@
                                 placeholder="Airport Code or City *"
                                 @searchchange="searchAirport">
                             </model-list-select>
-                            <div class="text-danger" v-if="errors.airport">Please make sure to select an airport code or city</div>
+                            <div class="text-light bg-danger error" v-if="errors.airport">Please make sure to select an airport code or city</div>
                         </div>
                     </div>
 
@@ -133,6 +133,14 @@
         padding: 20.5px;
 
         &::placeholder { color: #c7c7c7; }
+
+    }
+
+    .error {
+
+        padding: 0.5em;
+        margin: 0.5em 0;
+        border-radius: 3px;
 
     }
 

@@ -6803,7 +6803,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#mce-EMAIL[data-v-5011608a] {\n  padding: 20.5px;\n}\n#mce-EMAIL[data-v-5011608a]::-webkit-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]:-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::placeholder {\n  color: #c7c7c7;\n}\n.callout h2[data-v-5011608a] {\n  max-width: 40rem;\n}\n@media (max-width: 992px) {\n.callout[data-v-5011608a] {\n    padding: 5rem 0;\n    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%), url(\"/images/beach-hammock-small.jpeg\");\n    background-position: center 0em;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.callout h2[data-v-5011608a] {\n    font-size: 3em;\n}\n}", ""]);
+exports.push([module.i, "#mce-EMAIL[data-v-5011608a] {\n  padding: 20.5px;\n}\n#mce-EMAIL[data-v-5011608a]::-webkit-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]:-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::-ms-input-placeholder {\n  color: #c7c7c7;\n}\n#mce-EMAIL[data-v-5011608a]::placeholder {\n  color: #c7c7c7;\n}\n.error[data-v-5011608a] {\n  padding: 0.5em;\n  margin: 0.5em 0;\n  border-radius: 3px;\n}\n.callout h2[data-v-5011608a] {\n  max-width: 40rem;\n}\n@media (max-width: 992px) {\n.callout[data-v-5011608a] {\n    padding: 5rem 0;\n    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%), url(\"/images/beach-hammock-small.jpeg\");\n    background-position: center 0em;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.callout h2[data-v-5011608a] {\n    font-size: 3em;\n}\n}", ""]);
 
 // exports
 
@@ -39160,7 +39160,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm.errors.email
-                  ? _c("div", { staticClass: "text-danger" }, [
+                  ? _c("div", { staticClass: "text-light bg-danger error" }, [
                       _vm._v(
                         "Please make sure to type in a valid email address"
                       )
@@ -39190,7 +39190,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _vm.errors.airport
-                    ? _c("div", { staticClass: "text-danger" }, [
+                    ? _c("div", { staticClass: "text-light bg-danger error" }, [
                         _vm._v(
                           "Please make sure to select an airport code or city"
                         )
