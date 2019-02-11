@@ -1916,8 +1916,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: false
+    };
+  },
   mounted: function mounted() {
+    this.mounted = true;
     console.log('Component masthead mounted.');
   }
 });
@@ -6739,7 +6746,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".icon-arrow-down[data-v-1a46334d] {\n  vertical-align: middle;\n  margin-left: 0.3em;\n}\n@media (max-width: 1000px) {\nh1[data-v-1a46334d] {\n    font-size: 2.15rem;\n}\nh3[data-v-1a46334d] {\n    font-size: 1.25rem;\n}\n.masthead[data-v-1a46334d] {\n    background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url(\"/images/beach-stairs-small.jpeg\");\n    background-position: center center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n}", ""]);
+exports.push([module.i, ".icon-arrow-down[data-v-1a46334d] {\n  vertical-align: middle;\n  margin-left: 0.3em;\n}\n.hideTypeWriter[data-v-1a46334d] {\n  display: none !important;\n}\n.showTypeWriter[data-v-1a46334d] {\n  display: block !important;\n}\n@media (max-width: 1000px) {\nh1[data-v-1a46334d] {\n    font-size: 2.15rem;\n}\nh3[data-v-1a46334d] {\n    font-size: 1.25rem;\n}\n.masthead[data-v-1a46334d] {\n    background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2)), url(\"/images/beach-stairs-small.jpeg\");\n    background-position: center center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n}", ""]);
 
 // exports
 
@@ -38696,6 +38703,10 @@ var render = function() {
         { staticClass: "mb-2" },
         [
           _c("typewriter", {
+            class: {
+              hideTypeWriter: !_vm.mounted,
+              showTypewriter: _vm.mounted
+            },
             attrs: {
               speed: 150,
               "full-erase": true,

@@ -6,7 +6,8 @@
                 :speed="150"
                 :full-erase="true"
                 :interval="300"
-                :words='["Cheap Flights", "Romantic Getaways", "Exciting Adventures"]'>
+                :words='["Cheap Flights", "Romantic Getaways", "Exciting Adventures"]'
+                :class="{ hideTypeWriter: !mounted, showTypewriter: mounted }">
             </typewriter>
         </h1>
         <h3 class="mb-5">
@@ -21,7 +22,13 @@
 
 <script>
     export default {
+        data() {
+            return {
+                mounted: false
+            }
+        },
         mounted() {
+            this.mounted = true;
             console.log('Component masthead mounted.');
         },
     }
@@ -30,6 +37,9 @@
 <style lang="scss" scoped>
 
     .icon-arrow-down { vertical-align: middle; margin-left: 0.3em; }
+
+    .hideTypeWriter { display: none !important; }
+    .showTypeWriter { display: block !important; }
 
     @media (max-width: 1000px) {
 
@@ -44,6 +54,7 @@
             background-size: cover;
 
         }
+
     }
 
 </style>
