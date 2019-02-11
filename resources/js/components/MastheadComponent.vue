@@ -41,6 +41,8 @@
     .hideTypeWriter { display: none !important; }
     .showTypeWriter { display: block !important; }
 
+    .btn-xl { padding: 1.25rem 2.3rem; }
+
     @media (max-width: 1000px) {
 
         h1 { font-size: 2.15rem; }
